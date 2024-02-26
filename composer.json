@@ -1,0 +1,29 @@
+{
+    "name": "josegarcia/nexus",
+    "description": "Helps to read and inject all the variables from the .env file into the global variables $_env and $-_server",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Garcia\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jose Garcia",
+            "email": "jose.garcia051@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "vimeo/psalm": "^5.22",
+        "squizlabs/php_codesniffer": "^3.9",
+        "friendsofphp/php-cs-fixer": "^3.50",
+        "phpunit/phpunit": "^9.0"
+    },
+    "scripts": {
+        "fix": "vendor/bin/php-cs-fixer fix src --rules=@PSR12",
+        "lint": "vendor/bin/php-cs-fixer fix src --dry-run --diff --verbose --rules=@PSR12",
+        "test": "phpunit --bootstrap vendor/autoload.php test/unit/NexusTest.php",
+        "serve": "php -S localhost:8000 -t sample/"
+    }
+}
