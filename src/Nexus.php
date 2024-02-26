@@ -39,6 +39,9 @@ class Nexus
             // Split key and value
             list($key, $value) = explode('=', $line, 2);
 
+            // let's remove either " or ' from the value
+            $value = str_replace(['"', "'"], '', $value);
+
             // Remove quotes
             $key = trim($key);
             $value = trim($value);
